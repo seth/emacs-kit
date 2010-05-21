@@ -86,8 +86,8 @@ Symbols matching the text at point are put first in the completion list."
 (defun turn-on-whitespace ()
   (whitespace-mode t))
 
-(defun turn-on-paredit ()
-  (paredit-mode t))
+;; (defun turn-on-paredit ()
+;;   (paredit-mode t))
 
 (defun turn-off-tool-bar ()
   (tool-bar-mode -1))
@@ -101,7 +101,6 @@ Symbols matching the text at point are put first in the completion list."
 (add-hook 'coding-hook 'local-comment-auto-fill)
 (add-hook 'coding-hook 'turn-on-hl-line-mode)
 (add-hook 'coding-hook 'turn-on-save-place-mode)
-(add-hook 'coding-hook 'pretty-lambdas)
 (add-hook 'coding-hook 'add-watchwords)
 (add-hook 'coding-hook 'idle-highlight)
   
@@ -133,12 +132,12 @@ Symbols matching the text at point are put first in the completion list."
 
 ;; Cosmetic
 
-(defun pretty-lambdas ()
-  (font-lock-add-keywords
-   nil `(("(?\\(lambda\\>\\)"
-          (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    ,(make-char 'greek-iso8859-7 107))
-                    nil))))))
+;; (defun pretty-lambdas ()
+;;   (font-lock-add-keywords
+;;    nil `(("(?\\(lambda\\>\\)"
+;;           (0 (progn (compose-region (match-beginning 1) (match-end 1)
+;;                                     ,(make-char 'greek-iso8859-7 107))
+;;                     nil))))))
 
 ;; Other
 
@@ -208,11 +207,11 @@ Symbols matching the text at point are put first in the completion list."
   (interactive)
   (message (if (y-or-n-p "Do you have a test for that? ") "Good." "Bad!")))
 
-(defun esk-paredit-nonlisp ()
-  "Turn on paredit mode for non-lisps."
-  (set (make-local-variable 'paredit-space-delimiter-chars)
-       (list ?\"))
-  (paredit-mode 1))
+;; (defun esk-paredit-nonlisp ()
+;;   "Turn on paredit mode for non-lisps."
+;;   (set (make-local-variable 'paredit-space-delimiter-chars)
+;;        (list ?\"))
+;;   (paredit-mode 1))
 
 (defun message-point ()
   (interactive)
