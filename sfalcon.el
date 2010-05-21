@@ -1,4 +1,4 @@
-(setq sf-lisp-dir (concat dotfiles-dir "sf-lisp"))
+(setq sf-lisp-dir (concat dotfiles-dir "extra"))
 (add-to-list 'load-path sf-lisp-dir)
 
 (setq sf-lisp-subdirs
@@ -15,11 +15,8 @@
 
 (require 'sf-org)
 (require 'sf-misc)
-(require 'sf-email)
-(require 'sf-bbdb)
 (require 'sf-ess)
 (require 'magit)
-;(epa-file-enable)
 (load "sf-confluence.el")
 ;; starter kit adds flyspell-mode to text-mode,
 ;; I've been finding it too slow.

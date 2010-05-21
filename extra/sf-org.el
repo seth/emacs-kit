@@ -1,6 +1,6 @@
 ;; org-mode !
-(add-to-list 'load-path "~/.emacs.d/sf-lisp/org/lisp")
-(add-to-list 'load-path "~/.emacs.d/sf-lisp/org/contrib/lisp")
+(add-to-list 'load-path "~/.emacs.d/extra/org/lisp")
+(add-to-list 'load-path "~/.emacs.d/extra/org/contrib/lisp")
 (require 'org-install)
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))

@@ -1,5 +1,3 @@
-(require 'git)
-
 (add-to-list 'auto-mode-alist '("log4j" . conf-javaprop-mode))
 
 (put 'narrow-to-region 'disabled nil)
@@ -72,7 +70,7 @@
 ;;; yasnippet config
 (require 'yasnippet)
 (yas/initialize)
-(setq yas/root-directory "~/.emacs.d/sf-lisp/snippets")
+(setq yas/root-directory "~/.emacs.d/extra/snippets")
 (yas/load-directory yas/root-directory)
 
 (defun yas/advise-indent-function (function-symbol)
