@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: \begin{Ex} ... \end{Ex}
+# --
+\begin{Ex}
+$0
+\end{Ex}

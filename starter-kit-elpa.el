@@ -8,8 +8,15 @@
                                    'ruby-mode
                                    'inf-ruby
                                    'css-mode
+                                   'haml-mode
+                                   'htmlize
+                                   'log4j-mode
                                    'yaml-mode
                                    'magit
+                                   'ruby-test-mode
+                                   'sass-mode
+                                   'confluence
+                                   'etags-select
                                    'gist
                                    'yasnippet-bundle)
   "Libraries that should be installed by default.")
