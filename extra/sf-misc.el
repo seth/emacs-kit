@@ -49,7 +49,9 @@
 
 ;; FIXME: move to separate Erlang config file
 (add-to-list 'load-path "~/src/erlware-mode")
-(setq erlang-man-root-dir "/usr/local/lib/erlang/man")
+(setq
+ erlang-man-root-dir "/usr/local/share/man"
+ exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
 (defvar activity-log-file-prefix "~/ACTILOG"
@@ -85,5 +87,8 @@
 
 (yas/advise-indent-function 'noweb-indent-line)
 
+;; cucumber mode
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 (provide 'sf-misc)
