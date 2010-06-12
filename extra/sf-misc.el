@@ -70,8 +70,8 @@
 (global-set-key [f12] 'actilog)
 
 ;;; yasnippet config
-(require 'yasnippet)
-(yas/initialize)
+(require 'yasnippet-bundle)
+;; (yas/initialize)
 (setq yas/root-directory "~/.emacs.d/extra/snippets")
 (yas/load-directory yas/root-directory)
 

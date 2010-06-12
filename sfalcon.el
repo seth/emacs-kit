@@ -15,6 +15,7 @@
 
 (require 'sf-org)
 (require 'sf-misc)
+(require 'sf-confluence)
 (require 'sf-ess)
 (require 'magit)
 (load "sf-confluence.el")

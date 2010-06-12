@@ -1,7 +1,10 @@
-(setq confluence-url "http://confluence.evri.corp/confluence/rpc/xmlrpc"
-      confluence-default-space-alist (list (cons confluence-url "ZGST")))
+(require 'confluence)
+(setq confluence-url "https://wiki.corp.opscode.com/rpc/xmlrpc")
+;; (setq confluence-url "http://confluence.evri.corp/confluence/rpc/xmlrpc"
+;;       confluence-default-space-alist (list (cons confluence-url "ZGST")))
 
 (global-set-key "\C-xwf" 'confluence-get-page)
+
 ;; confluence editing support (with longlines mode)
 
 (autoload 'confluence-get-page "confluence" nil t)
