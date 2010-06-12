@@ -20,7 +20,8 @@
 ;;; mobile org setup
 (setq org-directory "~/Notebook/org")
 (setq org-mobile-inbox-for-pull "~/Notebook/org/from-mobile.org")
-(setq org-mobile-directory "/Volumes/sfalcon/org")
+;;(setq org-mobile-directory "/Volumes/sfalcon/org")
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
 
 ;;; org-babel setup
 (require 'org-babel-init)

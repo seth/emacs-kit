@@ -8,7 +8,7 @@
  '(compilation-read-command nil)
  '(ns-alternate-modifier (quote none))
  '(ns-command-modifier (quote meta))
- '(org-agenda-files (quote ("~/Notebook/org/bioc/advanced-course-may-2010.org" "~/Notebook/org/bioc/website.org" "~/Notebook/org/seth.org"))))
+ '(org-agenda-files (quote ("~/Notebook/org/opscode/initial-setup.org" "~/Notebook/org/seth.org"))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
