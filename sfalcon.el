@@ -1,3 +1,14 @@
+;; setup PATH
+(defun read-system-path ()
+  (with-temp-buffer
+    (insert-file-contents "/etc/paths")
+    (goto-char (point-min))
+    (replace-regexp "\n" ":")
+    (thing-at-point 'line)))
+
+(setenv "PATH" (read-system-path))
+(push "/usr/local/bin" exec-path)
+
 (setq sf-lisp-dir (concat dotfiles-dir "extra"))
 (add-to-list 'load-path sf-lisp-dir)
 
