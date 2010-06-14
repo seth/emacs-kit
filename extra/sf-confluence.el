@@ -54,3 +54,5 @@
                     (if (buffer-live-p tmp-buf)
                         (with-current-buffer tmp-buf
                           (longlines-restore))))))))
+
+(provide 'sf-confluence)
