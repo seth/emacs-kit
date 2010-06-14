@@ -9,13 +9,18 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
 
-;; ;; cribbed from: http://orgmode.org/worg/org-configs/org-config-examples.php
-;; (add-hook 'org-mode-hook
-;;           (lambda ()
-;;             ;; yasnippet (allow yasnippet to do it's thing in org files)
-;;             (make-variable-buffer-local 'yas/trigger-key)
-;;             (setq yas/trigger-key [tab])
-;;             (define-key yas/keymap [tab] 'yas/next-field-group)))
+;; http://orgmode.org/worg/org-faq.php#YASnippet
+(defun yas/org-very-safe-expand ()
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            ;; yasnippet (using the new org-cycle hooks)
+            (make-variable-buffer-local 'yas/trigger-key)
+            (setq yas/trigger-key [tab])
+            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+            (define-key yas/keymap [tab] 'yas/next-field)))
+
 
 ;;; mobile org setup
 (setq org-directory "~/Notebook/org")
