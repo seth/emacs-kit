@@ -30,6 +30,15 @@
 (require 'sf-ess)
 (require 'magit)
 (load "sf-confluence.el")
+
+;; chrome browser emacs extension support
+(if (locate-library "edit-server")
+   (progn
+     (require 'edit-server)
+     (setq edit-server-new-frame nil)
+     (edit-server-start)))
+
+
 ;; starter kit adds flyspell-mode to text-mode,
 ;; I've been finding it too slow.
 (setq flyspell-delay 6)
