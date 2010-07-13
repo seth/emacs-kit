@@ -6,6 +6,8 @@
  '(c-basic-offset 4)
  '(c-default-style (quote ((c-mode . "bsd") (java-mode . "java") (awk-mode . "awk") (other . "gnu"))))
  '(compilation-read-command nil)
+ '(confluence-save-credentials t)
+ '(confluence-save-page-minor-edits nil)
  '(ns-alternate-modifier (quote none))
  '(ns-command-modifier (quote meta))
  '(org-agenda-files (quote ("~/Notebook/org/opscode/initial-setup.org" "~/Notebook/org/seth.org"))))
