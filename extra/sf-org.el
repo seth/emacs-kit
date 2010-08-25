@@ -29,10 +29,10 @@
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 
 ;;; org-babel setup
-(require 'org-babel-init)
-(require 'org-babel-R)
-(require 'org-babel-ruby)
-(org-babel-load-library-of-babel)
+;; (require 'org-babel-init)
+;; (require 'org-babel-R)
+;; (require 'org-babel-ruby)
+;; (org-babel-load-library-of-babel)
 
 
 (provide 'sf-org)
