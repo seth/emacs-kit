@@ -98,6 +98,6 @@
 (textmate-mode)
 ;; (textmate-mode)
 ;; (textmate-mode)
-
+(require 'rspec-mode)
 
 (provide 'sf-misc)
