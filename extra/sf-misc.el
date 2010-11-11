@@ -91,4 +91,13 @@
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
+;; textmate and peep open
+(require 'textmate)
+(require 'peepopen)
+(setq ns-pop-up-frames nil)
+(textmate-mode)
+;; (textmate-mode)
+;; (textmate-mode)
+
+
 (provide 'sf-misc)
