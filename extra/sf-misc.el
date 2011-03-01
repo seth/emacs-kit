@@ -100,4 +100,7 @@
 ;; (textmate-mode)
 (require 'rspec-mode)
 
+;; http-twiddle
+(require 'http-twiddle)
+
 (provide 'sf-misc)
