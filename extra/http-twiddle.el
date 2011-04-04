@@ -74,7 +74,16 @@ length."
   (interactive (http-twiddle-read-endpoint))
   ;; close any old connection
   (when http-twiddle-process
-    (kill-buffer (process-buffer http-twiddle-process)))
+    ;;(kill-buffer (process-buffer http-twiddle-process)))
+    ;;
+    ;; killing the buffer means we lose its position in split screen
+    ;; views. so instead of killing the buffer, kill the process
+    ;; associated with the network stream and clear the buffer.
+    (let ((http-twiddle-buffer (process-buffer http-twiddle-process)))
+      (delete-process http-twiddle-process)
+      (save-selected-window
+	(pop-to-buffer http-twiddle-buffer)
+	(erase-buffer))))
   (let ((content (buffer-string)))
     (with-temp-buffer
       (insert content)
