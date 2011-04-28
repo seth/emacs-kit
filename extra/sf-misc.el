@@ -54,6 +54,10 @@
  exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
+;; wrangler Erlang code refactor tool
+(add-to-list 'load-path "/usr/local/share/wrangler/elisp")
+(require 'wrangler)
+
 (defvar activity-log-file-prefix "~/ACTILOG"
   "prefix for file containing activity log")
 
