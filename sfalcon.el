@@ -53,7 +53,17 @@
 ;;              (if window-system
 ;;                  (color-theme-zenburn)
 ;;                (color-theme-standard))))
-
+(setq color-theme-load-all-themes nil)
+(setq color-theme-directory (concat sf-lisp-dir "/themes"))
+(mapc (lambda (file) (load-file file))
+      (directory-files color-theme-directory t ".*\.el$"))
+(load-file (concat color-theme-directory "/blackboard.el"))
+(load-file (concat color-theme-directory "/color-theme-irblack.el"))
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-irblack)))
 ;; This code taken from comments on this post
 ;; http://emacs-fu.blogspot.com/2009/03/color-theming.html
 ;; The idea is to customize the colortheme based on whether
@@ -79,7 +89,7 @@
 
 
 (set-variable 'color-theme-is-global nil)
-(add-hook 'after-make-window-system-frame-hooks 'color-theme-blackboard)
+(add-hook 'after-make-window-system-frame-hooks 'color-theme-irblack)
 (add-hook 'after-make-console-frame-hooks 'color-theme-standard)
 
 (server-start)
