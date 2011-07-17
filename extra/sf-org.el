@@ -2,6 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/extra/org/lisp")
 (add-to-list 'load-path "~/.emacs.d/extra/org/contrib/lisp")
 (require 'org-install)
+(require 'org-velocity)
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (define-key global-map "\C-cl" 'org-store-link)
