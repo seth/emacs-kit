@@ -48,10 +48,10 @@
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;; FIXME: move to separate Erlang config file
-(add-to-list 'load-path "~/src/erlware-mode")
-(setq
- erlang-man-root-dir "/usr/local/share/man"
- exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
+;; (add-to-list 'load-path "~/src/erlware-mode")
+(add-to-list 'load-path "/usr/local/lib/erlang/lib/tools-2.6.6.4/emacs")
+(setq erlang-man-root-dir "/usr/local/share/man"
+      exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
 ;; wrangler Erlang code refactor tool
@@ -110,5 +110,11 @@
 
 ;; http-twiddle
 (require 'http-twiddle)
+
+(defun chomp (str)
+      "Chomp leading and tailing whitespace from STR."
+      (let ((s (if (symbolp str) (symbol-name str) str)))
+        (replace-regexp-in-string
+         "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" s)))
 
 (provide 'sf-misc)

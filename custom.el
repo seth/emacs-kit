@@ -10,7 +10,8 @@
  '(confluence-save-page-minor-edits nil)
  '(ns-alternate-modifier (quote none))
  '(ns-command-modifier (quote meta))
- '(org-agenda-files (quote ("~/Notebook/org/opscode/initial-setup.org" "~/Notebook/org/seth.org"))))
+ '(org-agenda-files (quote ("~/Notebook/org/opscode/initial-setup.org" "~/Notebook/org/seth.org")))
+ '(org-velocity-bucket "~/Notebook/org/solutions.org"))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
