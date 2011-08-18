@@ -59,11 +59,21 @@
       (directory-files color-theme-directory t ".*\.el$"))
 (load-file (concat color-theme-directory "/blackboard.el"))
 (load-file (concat color-theme-directory "/color-theme-irblack.el"))
+
 (require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-irblack)))
+
+
+(if window-system
+      (eval-after-load "color-theme"
+        '(progn
+           (color-theme-initialize)
+           (color-theme-irblack)))
+  (eval-after-load "color-theme"
+    '(progn
+       (color-theme-initialize)
+       (color-theme-emacs-revert-theme))))
+  
+
 ;; This code taken from comments on this post
 ;; http://emacs-fu.blogspot.com/2009/03/color-theming.html
 ;; The idea is to customize the colortheme based on whether
@@ -90,7 +100,7 @@
 
 (set-variable 'color-theme-is-global nil)
 (add-hook 'after-make-window-system-frame-hooks 'color-theme-irblack)
-(add-hook 'after-make-console-frame-hooks 'color-theme-standard)
+;;(add-hook 'after-make-console-frame-hooks 'color-theme-emacs-revert-theme)
 
 (server-start)
 
