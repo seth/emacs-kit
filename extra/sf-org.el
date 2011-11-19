@@ -26,7 +26,7 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/seth.org") "Next Action")
          "* TODO %?\n  %i\n  %a")
-        ("s" "Solution" entry (file+datetree (concat org-directory "/solutions.org"))
+        ("s" "Solution" entry (file+headline (concat org-directory "/solutions.org"))
          "* %?\nEntered on %U\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "* %?\nEntered on %U\n  %i\n  %a")))
