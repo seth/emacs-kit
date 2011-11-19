@@ -53,6 +53,12 @@
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)))
 
+;; capture links of selected mails from Mail.app
+(require 'org-mac-message)
+(setq org-mac-mail-account "userprimary")	
+;; (org-mac-message-insert-selected)
+(define-key global-map "\C-cm" 'org-mac-message-insert-selected)
+
 ;;; org-babel setup
 ;; (require 'org-babel-init)
 ;; (require 'org-babel-R)
