@@ -54,10 +54,17 @@
             (define-key yas/keymap [tab] 'yas/next-field)))
 
 ;; capture links of selected mails from Mail.app
-(require 'org-mac-message)
-(setq org-mac-mail-account "userprimary")	
-;; (org-mac-message-insert-selected)
-(define-key global-map "\C-cm" 'org-mac-message-insert-selected)
+;; (require 'org-mac-message)
+;; (setq org-mac-mail-account "userprimary")	
+;; ;; (org-mac-message-insert-selected)
+;; (define-key global-map "\C-cm" 'org-mac-message-insert-selected)
+
+;; this seems to work as well and is more general. It was slow on
+;; first load, then pretty snappy. Worked for mail and chrome
+(require 'org-mac-link-grabber)
+(add-hook 'org-mode-hook
+          (lambda () 
+            (define-key org-mode-map (kbd "C-c g") 'omlg-grab-link)))
 
 ;;; org-babel setup
 ;; (require 'org-babel-init)
